@@ -19,8 +19,10 @@ jstat pid | grep tid
 - 查看gc情况
 jstat -gc pid 5000 
 每5s刷新一次
-
+- 打印案发现场
+`jmap -dump:format=b,file=myHeap.hprof <pid>`
 **为什么我内存没有变高，而cpu却变高了呢？**
+
 因为你设置了堆的最大阈值，我们设置的一般是2G，所以只会导致
 频繁的full gc
 
